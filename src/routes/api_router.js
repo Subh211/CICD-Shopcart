@@ -7,7 +7,7 @@ const V2Router = require('./v2/index');
 const apiRouter = express.Router();
 
 
-apiRouter.use('/v1', V1Router);
+apiRouter.use( '/v1', V1Router);
 apiRouter.use('/v2', V2Router)
 
 
