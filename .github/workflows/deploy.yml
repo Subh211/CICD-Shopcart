@@ -1,0 +1,28 @@
+name: "Deploy to aws"
+
+on:
+    push: 
+        branches: 
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Setup node.js"
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "21"
+
+            - name: "Checkout code"
+              uses: actions/checkout@v2
+
+            - name: "Install dependencies"
+              run: npm install
+
+            - name: "Run the tests"
+              run: npm test
+
+            - name: "Start the server" 
+              run: npm start
